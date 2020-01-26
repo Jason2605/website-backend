@@ -33,6 +33,16 @@ Swagger UI - `*/swagger-ui.html`
 
 ``java -jar target/api-service-0.0.1-SNAPSHOT.jar``
 
+### Docker
+
+If you switch between environments there will need to be a rebuild.
+
+#### Development mode
+``docker-compose up``
+
+#### Production mode
+``docker-compose -f docker-compose.yml -f docker-compose.prod.yml up``
+
 ### Environment Variables
 
 #### JWT
@@ -46,6 +56,8 @@ DISCORD_APP_ID
 DISCORD_APP_SECRET
 DISCORD_APP_REDIRECT
 ```
+
+See [here](https://discordapp.com/developers/applications/#top) to create a new Discord OAuth application.
 #### App
 ```
 LOG_ROOT_LEVEL - (default: INFO)

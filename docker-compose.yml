@@ -1,0 +1,17 @@
+version: "3.4"
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile
+    volumes:
+    - ./src:/usr/share/app/src
+    - ./.mvn:/usr/share/app/.mvn
+    - ./mvnw:/usr/share/app/mvnw
+    - ./mvnw.cmd:/usr/share/app/mvnw.cmd
+    - ./pom.xml:/usr/share/app/pom.xml
+    env_file:
+      - .env
+    ports:
+      - 8082:8082

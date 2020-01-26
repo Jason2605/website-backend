@@ -1,0 +1,8 @@
+FROM mysql:5.7
+
+WORKDIR /usr/share/
+
+RUN apt-get update && apt-get install git -y
+RUN git clone https://github.com/codesupport/table-create-syntax.git
+
+RUN mv /usr/share/table-create-syntax/*.sql /docker-entrypoint-initdb.d
